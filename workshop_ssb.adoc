@@ -33,19 +33,21 @@ Albeit simple, this task will show the ease of use and power of SQL Stream Build
 
 Before you can start querying data from Kafka topics you need to register the Kafka clusters as _data sources_ in SSB.
 
+. Login to the Cloudera Manager console using username `admin` and password `Supersecret1`.
+
 . On the Cloudera Manager console, click on the Cloudera logo at the top-left corner to ensure you are at the home page and then click on the *SQL Stream Builder* service.
 
-. Click on the *SQLStreamBuilder Console* link to open the SSB UI.
+. Click on the *SQLStreamBuilder Console* link to open the SSB UI, and login with the same credentials ( `admin` : `Supersecret1` ).
 
-. On the logon screen, authenticate with user `admin` and password `Supersecret1`.
+. You will notice that SSB already has a project named `admin_default`. Click on the blue `-> Open` button to see what's inside.
 
-. You will notice that SSB already has a Kafka cluster registered as a data provider, named `CDP Kafka`. This provider is created automatically for SSB when it is installed on a cluster that also has a Kafka service:
+. Under `Data Sources`, you will see a `Kafka` folder with a ready made cluster named `Local Kafka`:
 +
-image::images/ssb/register-kafka-provider.png[width=800]
+image::images/ssb/ssb-kafka-source.png[width=800]
 
 . You can use this screen to add other external Kafka clusters as data providers to SSB. In this lab you'll add a second data provider using a different host name, just to show how simple it is.
 
-. Click on *Register Kafka Provider* and in the *Add Kafka Provider* window, enter the details for your new data source and click *Save changes*.
+. Click on the 3 dots next to the `Kafka` folder name, then click `New Kafka Data Source`. In the pop-up window enter the details for your new data source, as provided below.
 +
 [source,yaml]
 ----
@@ -55,6 +57,12 @@ Connection protocol: PLAINTEXT
 ----
 +
 image::images/ssb/add-kafka-provider.png[width=400]
+> **_NOTE:_** 
+>
+> If you are unsure regarding the format of the brokers list, you can allways reference the existing `Local Kafka` source, or ask your workmates and Cloudera instructors for help 😊
+
+. Finally, click *Validate* (on the bottom left) and *Save changes* (on the bottom right) to create your data source.
+
 
 [[lab_2, Lab 2]]
 == Lab 2 - Create a Table for a topic with JSON messages
@@ -135,7 +143,7 @@ Consumer Group: ssb-iot-1
 +
 image::images/ssb/source-properties.png[width=400]
 +
-NOTE: Setting the *Consumer Group* properties for a virtual table will allow SSB to also store offsets in Kafka, in addition to storing offsets in the job state, which is the default.
+> **_NOTE:_** Setting the *Consumer Group* properties for a virtual table will allow SSB to also store offsets in Kafka, in addition to storing offsets in the job state, which is the default.
 
 . Click *Create and Review* to complete the table creation. On the *Review* window, click *Keep*.
 . Let's query the newly created table to ensure things are working correctly. Enter the following query on the SQL editor are (top-right in the Console screen):
