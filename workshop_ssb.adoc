@@ -499,7 +499,7 @@ image::images/ssb/mvlist.png[width=500]
 Since there are parameters in this MV's URL, instead of redirecting you directly to another browser tab, SSB ask for the parameters values first.
 Enter the lower and upper bounds for the temperature range you want to query, and press *Go*:
 +
-image::images/ssb/mvconfig5.png[width=400]
+image:/ssb/mv-parameters.png[width=400]
 
 . Verify that the values of the `sensorAverage` field in the MV must all be within the range you specified.
 
