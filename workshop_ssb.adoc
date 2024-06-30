@@ -486,7 +486,7 @@ Filters:       sensorGreatThan60  greater           0
                sensorAverage      less or equal     {upperTemp}
 ----
 +
-image::images/ssb/mvconfigx.png[width=600]
+image::images/ssb/mvconfig3.png[width=600]
 
 . You will notice that the new URL for this MV has placeholders for the `{lowerTemp}` and `{upperTemp}` parameters:
 +
