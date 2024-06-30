@@ -70,10 +70,8 @@ image::images/ssb/add-kafka-provider.png[width=400]
 Now you can _map_ the `iot_enriched` topic to a _table_ in SQL Stream Builder.
 _Tables_ in SSB are a way to associate a Kafka topic with a schema so that you can use it in your SQL queries.
 
-. To create your first Table, click on *Console* (on the left bar), enter a name for your job (e.g. "my_first_job") and click on the *Create Job* button.
-. On the *Virtual Tables* pane on the left, click *Add Table > Apache Kafka*.
-+
-image::images/ssb/add-table.png[width=800]
+. To create your first Table you first need to create a Job. Click on the 3 dots next to the `Jobs` folder and then click `New Job`. Enter a name for your job (e.g. "my_first_job") and click on the *Create* button.
+.  Click on the 3 dots next to the `Virtual Tables` folder and then click `New Kafka Table`.
 
 . On the *Kafka Table* window, enter the following information:
 +
@@ -85,15 +83,13 @@ Data Format:   JSON
 Topic Name:    iot_enriched
 ----
 +
-image::images/ssb/kafka-source.png[width=400]
+image::images/ssb/ssb-new-kafka-table.png[width=800]
 
 . Ensure the *Schema Definition* tab is selected. Click *Detect Schema* at the bottom of the window.
 SSB will take a sample of the data flowing through the topic and will infer the schema used to parse the content.
-Alternatively you could also specify the schema in this tab.
 +
-image::images/ssb/detect-schema.png[width=800]
+Click *OK* when it's done, to acknowledge the "Schema Detection Complete" message.
 
-. Click *OK* to acknowledge the "Schema Detection Complete" message.
 . Whenever you need to manipulate the source data to fix, cleanse or convert some values, you can define transformations for the table.
 Transformations are defined in Javascript code.
 +
@@ -146,7 +142,7 @@ image::images/ssb/source-properties.png[width=400]
 NOTE: Setting the *Consumer Group* properties for a virtual table will allow SSB to also store offsets in Kafka, in addition to storing offsets in the job state, which is the default.
 
 . Click *Create and Review* to complete the table creation. On the *Review* window, click *Keep*.
-. Let's query the newly created table to ensure things are working correctly. Enter the following query on the SQL editor are (top-right in the Console screen):
+. Let's query the newly created table to ensure things are working correctly. Go to the job you've created (in this example this is "my_first_job"), and to on the top window enter the following query:
 +
 [source,sql]
 ----
@@ -165,7 +161,7 @@ FROM
 +
 NOTE: The first query execution usually takes a bit longer, since SSB has to start the Job Manager that will handle the job execution.
 +
-image::images/ssb/first-query.png[width=800]
+image::images/ssb/ssb-job-running.png[width=800]
 
 
 . Click *Stop* to stop the job and release all the cluster resources used by the query.
