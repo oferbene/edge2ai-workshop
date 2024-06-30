@@ -57,7 +57,7 @@ Connection protocol: PLAINTEXT
 ----
 +
 image::images/ssb/add-kafka-provider.png[width=400]
-> **_NOTE:_** 
+> **_TIP:_** 
 >
 > If you are unsure regarding the format of the brokers list, you can allways reference the existing `Local Kafka` source, or ask your workmates and Cloudera instructors for help 😊
 
@@ -143,7 +143,7 @@ Consumer Group: ssb-iot-1
 +
 image::images/ssb/source-properties.png[width=400]
 +
-> **_NOTE:_** Setting the *Consumer Group* properties for a virtual table will allow SSB to also store offsets in Kafka, in addition to storing offsets in the job state, which is the default.
+NOTE: Setting the *Consumer Group* properties for a virtual table will allow SSB to also store offsets in Kafka, in addition to storing offsets in the job state, which is the default.
 
 . Click *Create and Review* to complete the table creation. On the *Review* window, click *Keep*.
 . Let's query the newly created table to ensure things are working correctly. Enter the following query on the SQL editor are (top-right in the Console screen):
