@@ -401,9 +401,9 @@ In this lab you'll create and query Materialized Views (MV).
 
 You will define MVs on top of the query you created in the previous lab. Make sure that query is running before executing the steps below.
 
-. On the *SQL Jobs* screen, verify that the `Sensor6Stats` job is running. Select the job and click on the *Edit in Console View* button.
+. On the *SQL Jobs* screen, verify that the `Sensor6Stats` job is running. Select the job 
 +
-image::images/ssb/edit-job.png[width=800]
+image::images/ssb/ssb_job_status.png[width=800]
 
 . In order to add Materialized Views to a query the job needs to be stopped.
 On the job page, click the *Stop* button to pause the job.
