@@ -490,7 +490,7 @@ image::images/ssb/mvconfig3.png[width=500]
 
 . You will notice that the new URL for this MV has placeholders for the `{lowerTemp}` and `{upperTemp}` parameters:
 +
-image::images/ssb/mv-url-parameters.png[width=500]
+image::images/ssb/mvconfig4.png[width=500]
 
 . Close the *Materialized View* tab and execute the job again.
 
@@ -499,7 +499,7 @@ image::images/ssb/mv-url-parameters.png[width=500]
 Since there are parameters in this MV's URL, instead of redirecting you directly to another browser tab, SSB ask for the parameters values first.
 Enter the lower and upper bounds for the temperature range you want to query, and press *Go*:
 +
-image::images/ssb/mv-parameters.png[width=400]
+image::images/ssb/mvconfig5.png[width=400]
 
 . Verify that the values of the `sensorAverage` field in the MV must all be within the range you specified.
 
