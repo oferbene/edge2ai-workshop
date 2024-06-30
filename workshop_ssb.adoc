@@ -490,7 +490,7 @@ image::images/ssb/mvconfig3.png[width=600]
 
 . You will notice that the new URL for this MV has placeholders for the `{lowerTemp}` and `{upperTemp}` parameters:
 +
-image::images/ssb/mvconfig4.png[width=500]
+image::images/ssb/mvlist.png[width=500]
 
 . Close the *Materialized View* tab and execute the job again.
 
