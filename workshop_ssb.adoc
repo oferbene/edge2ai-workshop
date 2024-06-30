@@ -199,9 +199,7 @@ Evolve:        checked
 +
 image::images/ssb/schema-registy-iot-enriched.png[width=800]
 
-. Back on the SQL Stream Builder page, click on *Data Providers* (on the left bar) *> Catalogs > (+) Register Catalog*.
-+
-image::images/ssb/add-catalog-sr.png[width=800]
+. Back on the SQL Stream Builder page, click on the `Data Sources` folder > 3 dots next to the `Catalog` folder > (+) New Catalog.
 
 . In the *Catalog* dialog box, enter the following details:
 +
@@ -214,17 +212,17 @@ Schema Registry URL: http://<CLUSTER_HOSTNAME>:7788/api/v1
 Enable TLS:          No
 ----
 
-. Click on the *Add Filter* button and enter the following configuration for the filter:
+. On the same window under *Filters* enter the following configuration for the filter:
 +
 [source,yaml]
 ----
 Database Filter: .*
 Table Filter:    iot.*
 ----
-
-. Click on the plus sign besides the filter details to register the filter:
 +
-image::images/ssb/add-filter.png[width=400]
+NOTE: Make sure to write `.\*` in the "Database Filter" field, and not `*`, otherwise you'll get a validation error later.
+
+. **IMPORTANT** Click on the plus sign **(+)** besides the filter details to save the filter.
 
 . Click on *Validate*. If the configuration is correct you should see the message "Provider is valid".
 Hover your mouse over the message and you'll see the number of tables (schemas) that matched your filter.
@@ -233,11 +231,11 @@ image::images/ssb/add-sr-catalog.png[width=400]
 
 . Click *Create* to complete the catalog registration.
 
-. On the *Console* screen you should see now the list of tables that were imported from Schema Registry.
+. Under `External Resources/Virtual Tables/sr/default_database/` you should see the list of tables that were imported from the Schema Registry.
 +
-image::images/ssb/sr-tables.png[width=300]
+image::images/ssb/ssb-iot-enriched-avro.png[width=500]
 
-. Query the imported table to ensure it is working correctly.
+. Use your created job or a new job to Query the imported table and ensure it is working correctly.
 +
 Clear the contents of the SQL editor and type the following query:
 +
