@@ -278,11 +278,11 @@ Streams Messaging Manager Web UI*).
 ... Availability: `Low`
 ... Cleanup Policy: `delete`
 
-. On the SSB UI, click *New Job* at the top of the *Console* screen.
+. On the SSB UI, create a new job by clicking on the 3 dots next to the `Jobs` folder, then on `New Job`.
 
-. On the *Create New Job* dialog box, enter `Sensor6Stats` for the *Job Name* and click *Create Job*.
+. On the *Create New Job* dialog box, enter `Sensor6Stats` for the *Job Name* and click *Create*.
 
-. In the SQL editor type the query shown below.
+. In the SQL editor type the query shown below, *but do not* execute yet.
 +
 This query will compute aggregates over 30-seconds windows that slide forward every second. For a specific sensor value in the record (`sensor_6`) it computes the following aggregations for each window:
 +
@@ -351,9 +351,6 @@ Note that the data displayed on the screen is only a sample of the data returned
 +
 image::images/ssb/sql-aggr-results.png[width=800]
 +
-TIP: If you need more screen space to examine the query results, you can hide the tables pane by clicking on the editor option shown below:
-+
-image::images/ssb/hide-tables.png[width=600]
 
 . Check the job execution details and logs by clicking on *SQL Jobs* (on the left bar). Explore the options on this screen:
 +
